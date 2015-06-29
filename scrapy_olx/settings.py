@@ -14,6 +14,13 @@ BOT_NAME = 'scrapy_olx'
 SPIDER_MODULES = ['scrapy_olx.spiders']
 NEWSPIDER_MODULE = 'scrapy_olx.spiders'
 
+RETHINKDB = {
+    'table_name': 'items', 'db': 'scrapy_olx'
+}
+
+ITEM_PIPELINES = {
+    'scrapy_olx.pipelines.RethinkdbPipeline': 1
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scrapy_olx (+http://www.yourdomain.com)'
